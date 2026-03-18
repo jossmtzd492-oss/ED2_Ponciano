@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dulceria', function (Blueprint $table) {
+        Schema::create('dulcerias', function (Blueprint $table) {
             $table->id(); //Id del alumento
             $table->string("Nombre"); //Nombre del alimento
             $table->boolean("Disponibilidad"); //Estado o disponibilidad
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dulceria');
+        Schema::dropIfExists('dulcerias');
     }
 };

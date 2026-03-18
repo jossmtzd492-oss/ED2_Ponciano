@@ -11,7 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // REGISTRAR TODOS LOS MIDDLEWARE 
+        $middleware-> alias([
+            'auth' => App\Http\Middleware\VerificaUsuario::class, //Añadimos RUTA
+            'admin' => App\Http\Middleware\AdminMiddleware::class, //Añadimos RUTA para ADMIN
+            
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

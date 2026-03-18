@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AdminMiddleware
 {
@@ -26,7 +27,7 @@ class AdminMiddleware
         //Verificar que la sesión sea de un administrador
         //user saca las credenciales de la seion activa, obtiene todos ls datos de la bd
         if(!Auth::user()->is_Admin){
-            return redirect()->route('.index') #NO SEEE
+            return redirect()->route('dulceria.index') #NO SEEE
             ->with('error', 'No cuentas con permisos de administrador');
         }
         return $next($request);

@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DulceriaController;
+
 use App\Http\Controllers\AuthController; //NUEVO 
+use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,7 +28,7 @@ Route::get('/registro', [
 
 Route::post('/registro', [
     AuthController::class, 'register'
-])->name('registro.strore');
+])->name('registro.store');
 
 //RUTAS PARA MOSTRAR EL FORMULARIO DE INICIO DE SESIÓN
 Route::get('/acceso',[
