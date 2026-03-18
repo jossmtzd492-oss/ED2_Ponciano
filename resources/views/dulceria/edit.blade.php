@@ -9,11 +9,9 @@
     <!-- usar todos los elementos de layout -->
     @extends('layouts.app')
     @section('content')
-    <h1>Registrar paquetes o productos</h1>
+    <h1>{{$dulceria->Nombre}}</h1>    
     
-    <form action="{{ route('dulceria.update', $dulceria) }}" method="POST">
-
-        <!--- Uso obligatorio para enviar info en formularios--->
+    <form  action = "{{route('dulceria.update',$dulceria)}} " method="POST">
         @csrf
         @method('PUT')
 
@@ -22,13 +20,13 @@
             <input type="text" name="Nombre" placeholder="Nombre" value="{{ $dulceria->Nombre }}" class="form-control">
         </div>
 
-       <div class="form-check">
+        <div class="form-check">
             <input type="checkbox" name="Disponibilidad" value="1" value="{{ $dulceria->Disponibilidad }}" >
             <label >Producto disponible</label>
             
         </div>
 
-       <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-dollar-sign"></i></span>
              <input type="number" min=0.5 name="Precio" placeholder="Precio"  value="{{ $dulceria->Precio }}"  class="form-control">
         </div>
@@ -62,6 +60,7 @@
 
         <button type="submit" class="btn btn-outline-primary"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
     </form>
+
     @endsection
 </body>
 </html>

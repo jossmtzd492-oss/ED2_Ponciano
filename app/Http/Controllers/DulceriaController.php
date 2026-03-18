@@ -13,9 +13,9 @@ class DulceriaController extends Controller
      */
     public function index()
     {
-        $dulceria = Dulceria::all();
+        $dulcerias = Dulceria::all();
 
-        return view('dulceria.index', compact('dulceria'));
+        return view('dulceria.index', compact('dulcerias'));
     }
 
     /**

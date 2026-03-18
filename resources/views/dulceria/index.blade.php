@@ -51,7 +51,7 @@
         </thead>
         <tbody>
             <!--!: CICLO PARA RECORRER LOS DATOS DEL MODELO -->
-            @foreach ($dulceria as $dulceria)
+            @foreach ($dulcerias as $dulceria)
 
                 <tr>
                     <td> {{ $dulceria->id}}</td>
@@ -64,7 +64,7 @@
                     <td> {{ $dulceria->Stock}}</td>
                     
                     <td> 
-                        <a href="{{ route('dulceria.edit', $dulceria) }}">
+                        <a href="{{ route('dulceria.edit', $dulceria) }}" >
                             <button class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button>
                         </a>
                         
