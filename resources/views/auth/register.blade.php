@@ -12,12 +12,18 @@
     
     <h1> Registro de usuario</h1>
 
-    <form action=" {{ route('registro.strore') }} " method="POST">
+    <form action=" {{ route('registro.store') }} " method="POST">
         @csrf
 
         <input type="text" name="name" placeholder="Nombre" class="form-control" required>
         <br>
         <input type="email" name="email" placeholder="Correo" class="form-control" required>
+        <br>
+        <input type="number" name="edad" placeholder="Edad" class="form-control" required>
+        <br>
+        <input type="text" name="turno" placeholder="Turno" class="form-control" required>
+        <br>
+        <input type="text" name="puesto" placeholder="Puesto" class="form-control" required>
         <br>
         <input type="password" name="password" placeholder="Contraseña" class="form-control" required>
         <br>
