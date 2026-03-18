@@ -19,6 +19,9 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|EMAIL|unique:users',
             'password' => 'required|confirmed|min:8',
+            'edad' => 'required|integer',
+            'turno' => 'required',
+            'puesto' => 'required',
         ]);
 
         //Guardar la informacion de la base de datos
@@ -26,13 +29,16 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password), 
+            'edad' => $request->edad,
+            'turno' => $request->turno,
+            'puesto' => $request->puesto,
             'is_Admin' => $request->has('is_Admin'),
         ]);
 
         //Iniciar sesión de forma automatica
         Auth::login($user);
 
-        return redirect()->route('libros.index');
+        return redirect()->route('dulceria.index');
     }    
 
     //Método para regresar vista en inicio de sesión
@@ -54,7 +60,7 @@ class AuthController extends Controller
             $request -> session()->regenerate();
 
             //Redireccionar al usuario con su sesión iniciada
-            return redirect()->route('///.index'); #NO SEE
+            return redirect()->route('dulceria.index'); #NO SEE
         }
 
         //Si los datos son incorrectos mandar un error

@@ -29,7 +29,17 @@ class DulceriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Dulceria::create([
+            'Nombre' => $request->Nombre,
+            'Disponibilidad' => $request->Disponibilidad,
+            'Precio' => $request->Precio,
+            'Descripcion' => $request->Descripcion,
+            'TipoAlimento' => $request->TipoAlimento,
+            'Categoria' => $request->Categoria,
+            'Stock' => $request->Stock,
+        ]);
+
+        return redirect()->route('dulceria.create');
     }
 
     /**
@@ -43,24 +53,40 @@ class DulceriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Dulceria $dulceria)
     {
-        //
+        return view('dulceria.edit', compact('dulceria'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Dulceria $dulceria)
     {
-        //
+        $request->validate([
+            'Nombre' => 'required',
+            'Disponibilidad' => 'required',
+            'Precio' => 'required',
+            'Descripcion' => 'required',
+            'TipoAlimento' => 'required',
+            'Categoria' => 'required',
+            'Stock' => 'required',
+        ]);
+
+        $dulceria->update($request->all());
+
+        return redirect()->route('dulceria.index')
+        ->with('success','Paquete o producto actualizado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Dulceria $dulceria)
     {
-        //
+        $dulceria->delete();
+
+        return redirect()->route('dulceria.index')
+        ->with('success', '¡Paquete o producto eliminado exitosamente!');
     }
 }

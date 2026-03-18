@@ -6,6 +6,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use Illuminate\Support\Facades\Auth;
+
 class VerificaUsuario
 {
     /**
@@ -15,6 +17,12 @@ class VerificaUsuario
      */
     public function handle(Request $request, Closure $next): Response
     {
+        //Verificar si el usuario tiene una sesión activa
+        if(!Auth::check()){
+            return redirect()->route('registro')->with('error', 'se deve registrar e iniciar sesión');
+        }
+
+        //NO borrar - muy importante
         return $next($request);
     }
 }
