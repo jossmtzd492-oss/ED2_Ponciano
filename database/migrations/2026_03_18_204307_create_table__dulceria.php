@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table__dulceria', function (Blueprint $table) {
-            $table->id();
+        Schema::create('dulceria', function (Blueprint $table) {
+            $table->id(); //Id del alumento
+            $table->string("Nombre"); //Nombre del alimento
+            $table->boolean("Disponibilidad"); //Estado o disponibilidad
+            $table->double("Precio",10,2);
+            $table->text("Descripcion");
+            $table->string("TipoAlimento");
+            $table->string("Categoria");
+            $table->integer("Stock");
+
             $table->timestamps();
         });
     }
@@ -22,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table__dulceria');
+        Schema::dropIfExists('dulceria');
     }
 };

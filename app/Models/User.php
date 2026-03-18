@@ -22,6 +22,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_Admin',
+    ];
+
+    protected $casts = [
+        'is_Admin' => 'boolean',
     ];
 
     /**
