@@ -9,6 +9,7 @@ class Dulceria extends Model
     //
     protected $fillable = [
         'Nombre',
+        'Disponibilidad',
         'Precio',
         'Descripcion',
         'TipoAlimento',

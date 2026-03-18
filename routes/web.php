@@ -26,7 +26,7 @@ Route::get('/registro', [
 
 Route::post('/registro', [
     AuthController::class, 'register'
-])->name('registro.store');
+])->name('registro.strore');
 
 //RUTAS PARA MOSTRAR EL FORMULARIO DE INICIO DE SESIÓN
 Route::get('/acceso',[

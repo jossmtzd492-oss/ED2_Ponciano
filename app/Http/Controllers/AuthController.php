@@ -60,7 +60,7 @@ class AuthController extends Controller
             $request -> session()->regenerate();
 
             //Redireccionar al usuario con su sesión iniciada
-            return redirect()->route('///.index'); #NO SEE
+            return redirect()->route('dulceria.index'); #NO SEE
         }
 
         //Si los datos son incorrectos mandar un error

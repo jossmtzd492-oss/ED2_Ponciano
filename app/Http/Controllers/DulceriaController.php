@@ -31,6 +31,7 @@ class DulceriaController extends Controller
     {
         Dulceria::create([
             'Nombre' => $request->Nombre,
+            'Disponibilidad' => $request->Disponibilidad,
             'Precio' => $request->Precio,
             'Descripcion' => $request->Descripcion,
             'TipoAlimento' => $request->TipoAlimento,
@@ -64,6 +65,7 @@ class DulceriaController extends Controller
     {
         $request->validate([
             'Nombre' => 'required',
+            'Disponibilidad' => 'required',
             'Precio' => 'required',
             'Descripcion' => 'required',
             'TipoAlimento' => 'required',
