@@ -14,7 +14,7 @@
     <br>
 
     <div class="d-flex justify-content-end mb-2" >
-        <a href=" {{ route('libros.create') }}">
+        <a href=" {{ route('dulceria.create') }}">
             <button class="btn btn-outline-success mb-3 me-3"><i class="fa-solid fa-plus"></i> Nuevo dulce</button>
         </a>
 
@@ -40,10 +40,12 @@
             <tr> 
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Correo</th>
-                <th>Edad</th>
-                <th>Turno</th>
-                <th>Puesto</th>
+                <th>Disponibilidad</th>
+                <th>Precio</th>
+                <th>Descripcion</th>
+                <th>Tipo de alimento</th>
+                <th>Categoria de alimento</th>
+                <th>Stock</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -52,12 +54,15 @@
             @foreach ($dulceria as $dulceria)
 
                 <tr>
-                    <td> {{ $libro->id}}</td>
-                    <td> {{ $libro->nombre}}</td>
-                    <td> {{ $libro->correo}}</td>
-                    <td> {{ $libro->edad}}</td>
-                    <td> {{ $libro->turno}}</td>
-                    <td> {{ $libro->puesto}}</td>
+                    <td> {{ $dulceria->id}}</td>
+                    <td> {{ $dulceria->Nombre}}</td>
+                    <td> {{ $dulceria->Disponibilidad}}</td>
+                    <td> {{ $dulceria->Precio}}</td>
+                    <td> {{ $dulceria->Descripcion}}</td>
+                    <td> {{ $dulceria->TipoAlimento}}</td>
+                    <td> {{ $dulceria->Categoria}}</td>
+                    <td> {{ $dulceria->Stock}}</td>
+                    
                     <td> 
                         <a href="{{ route('dulceria.edit', $dulceria) }}">
                             <button class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button>
