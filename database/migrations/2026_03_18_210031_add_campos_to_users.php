@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table -> integer('edad')->nullable();
+            $table -> string('turno')->nullable();
+            $table -> string('puesto')->nullable();
+            $table -> boolean('is_Admin')->default(false);
+
         });
     }
 
@@ -22,7 +27,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            //            
+
         });
     }
 };
