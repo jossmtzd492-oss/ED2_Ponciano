@@ -12,11 +12,11 @@ Route::get('/', function () {
 
 
 //Ruta para manejar los formularios y accesos en la
-Route::get('/dulceria/{id}/edit', [
+Route::get('/dulceria/{dulceria}/edit', [
     DulceriaController::class, 'edit'
 ])->name('dulceria.edit');
 
-Route::put('/dulceria/{id}', [
+Route::put('/dulceria/{dulceria}', [
     DulceriaController::class, 'update'
 ])->name('dulceria.update');
 

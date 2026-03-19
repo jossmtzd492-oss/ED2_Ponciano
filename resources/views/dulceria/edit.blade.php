@@ -21,7 +21,8 @@
         </div>
 
         <div class="form-check">
-            <input type="checkbox" name="Disponibilidad" value="1" value="{{ $dulceria->Disponibilidad }}" >
+            <input type="checkbox" name="Disponibilidad" value="1"
+                {{ $dulceria->Disponibilidad ? 'checked' : '' }}>
             <label >Producto disponible</label>
             
         </div>

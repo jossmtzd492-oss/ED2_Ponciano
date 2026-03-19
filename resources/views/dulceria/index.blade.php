@@ -68,7 +68,7 @@
                             <button class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button>
                         </a>
                         
-                        <form action="{{ route('dulceria.destroy', $dulceria) }}" method="POST" class="d-inline">
+                        <form action="{{ route('dulceria.destroy', $dulceria->id) }}" method="POST" class="d-inline">
                             @csrf 
                             @method('DELETE')
 
